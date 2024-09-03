@@ -1,0 +1,30 @@
+<div class="card shadow1 mt-5">
+    <div class="card-body">
+        <div class="col-5  mt-2" *ngIf="Role.Admin==user || Role.Finance==user">
+            <div class="dis">
+            <label> المكتب   </label>
+            <select class="form-select"  [(ngModel)]="bureau" >
+                <option  value="مالية">مالية</option>
+                <option  value="تقني">تقني</option>
+                <option  value="مدير مكتب">مدير مكتب </option>
+              </select>
+       
+                </div>
+        </div>
+        <div class="col-10 mt-2" *ngIf="Role.Director==user">
+          <div class="dis">
+          <label> البحث بإسم المستخدم    </label>
+          <select class="form-select"  [(ngModel)]="user_name" >
+              <option  value="مالية">مالية</option>
+              <option  value="تقني">تقني</option>
+              <option  value="مدير مكتب">مدير مكتب </option>
+            </select>
+     
+              </div>
+      </div>
+        <div>
+            <canvas id="canvas">{{chart}}</canvas>
+          </div>
+      </div>
+      </div>
+

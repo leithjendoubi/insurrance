@@ -1,0 +1,28 @@
+@import "src/app/styles/variables";
+
+main{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  .choose-report-container{
+    width:70%;
+    height: 70%;
+    background-color: #fff;
+    box-shadow: 0 14.625px 80.4375px -21.9375px rgba(43, 37, 37, 0.12);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    h1{
+      font-size: 1.5rem;
+      color: map-get($colors,"primary");
+      font-family: Cairo,sans-serif;
+    }
+    form{
+      place-self: start center;
+      display: grid;
+      width: 30%;
+      row-gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<button mat-flat-button [color]="color" [disabled]="disabled" [class]="isLoading ? classlist+' button-loading' : classlist" [type]="type ? type : 'button'">
+  <span class="button-text">
+    {{label}}
+  </span>
+  <mat-icon fontSet="material-symbols-outlined" *ngIf="icon">{{icon}}</mat-icon>
+</button>
+
+<!--<button *ngIf="icon" mat-flat-button [color]="color" [class]="isLoading ? classlist+' button-loading' : classlist" type="submit">
+  <span class="button-text">{{label}}</span>
+
+</button>-->

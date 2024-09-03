@@ -1,0 +1,57 @@
+<mat-nav-list>
+  @if (dataService.isAdmin || dataService.isUser || (dataService.isDirector && data.management!=="payment") || (dataService.isDirector && data.management==="payment" && data.tableRow.state===0)) {
+    @if(data.management!=='payment'){<a mat-list-item (click)="close()" [routerLink]="'/dashboard/'+data.url+'/update/'" [state]="{data:data.tableRow}">
+      <span matListItemTitle>تعديل </span>
+      <span matListItemIcon>
+        <mat-icon color="accent">edit_note</mat-icon>
+      </span>
+    </a>}
+    <a mat-list-item
+       (click)="data.management==='healthInsurance' ? data.deleteObject(data.tableRow) :data.delete(data.tableRow.id)">
+      <span matListItemTitle>حذف</span>
+      <span matListItemIcon>
+        <mat-icon color="warn">delete_forever</mat-icon>
+      </span>
+    </a>
+  }
+  @if (data.isInsurance) {
+    <a mat-list-item
+       (click)="data.management==='healthInsurance' ? data.printObject(data.tableRow) : data.print(data.tableRow.id)">
+      <span matListItemTitle>طباعة </span>
+      <span matListItemIcon>
+        <mat-icon color="primary">print</mat-icon>
+    </span>
+    </a>
+  }
+  @if (data.management === 'payment') {
+    <a mat-list-item (click)="data.uploadBill(data.tableRow)">
+      <span matListItemTitle>إلقاء نظرة على مطلب الإستخلاص</span>
+      <span matListItemIcon>
+        <mat-icon color="primary">receipt</mat-icon>
+    </span>
+    </a>
+
+    @if (dataService.isFinance && data.tableRow.state === 0) {
+      <a mat-list-item (click)="data.acceptPayment(data.tableRow.id)">
+        <span matListItemTitle>قبول مطلب الإستخلاص</span>
+        <span matListItemIcon>
+        <mat-icon style="color:#28B411">credit_score</mat-icon>
+        </span>
+      </a>
+      <a mat-list-item (click)="data.rejectPayment(data.tableRow.id)">
+        <span matListItemTitle>رفض مطلب الإستخلاص</span>
+        <span matListItemIcon>
+        <mat-icon color="warn">credit_card_off</mat-icon>
+        </span>
+      </a>
+    }
+
+  }
+  <a mat-list-item (click)="close()">
+    <span matListItemTitle>خروج</span>
+    <span matListItemIcon>
+        <mat-icon>undo</mat-icon>
+    </span>
+  </a>
+
+</mat-nav-list>

@@ -1,0 +1,22 @@
+<div class="options">
+  <div class="title-content">
+    <h1 mat-dialog-title>{{ data.title }}</h1>
+    <div mat-dialog-content>{{ data.content }}</div>
+  </div>
+  @if (data.type === 'info') {
+    <div mat-dialog-actions *ngIf="data.type==='info'">
+      <!--<mat-custom-button  color="primary" (click)="data.onSubmit($event)"  class="yes" [isLoading]="data.isLoading !== undefined ? data.isLoading :false" label="موافق"></mat-custom-button><br>-->
+      <button mat-flat-button color="primary" mat-dialog-close="false">حسنا</button>
+    </div>
+  }
+  @else {
+  <div mat-dialog-actions>
+    <mat-custom-button color="primary" (click)="data.onSubmit($event)" class="yes"
+                       [isLoading]="data.isLoading !== undefined ? data.isLoading :false"
+                       label="موافق"></mat-custom-button>
+    <br>
+    <button mat-stroked-button mat-dialog-close="false" class="no">إلغاء</button>
+  </div>
+}
+
+</div>

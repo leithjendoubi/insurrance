@@ -1,0 +1,15 @@
+<main>
+  <div class="choose-report-container">
+    <h1>إختر نوع التأمين</h1>
+    <form [formGroup]="myForm" (submit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>أنواع التأمين</mat-label>
+        <mat-select formControlName="insurance">
+          <mat-option *ngFor="let type of insuranceTypes" [value]="type.name">{{type.label}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="myForm.get('insurance')?.hasError('required')">يجب عليك إختيار <strong> نوع التأمين</strong></mat-error>
+      </mat-form-field>
+      <mat-custom-button color="primary" type="submit" label="مواصلة"></mat-custom-button>
+    </form>
+  </div>
+</main>

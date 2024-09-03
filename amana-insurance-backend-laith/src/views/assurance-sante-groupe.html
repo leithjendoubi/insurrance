@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./assets/facture sante groupe.svg');
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center center;
+            width: 100vw;
+            height: 100vh;
+        }
+        #id {
+            position: absolute;
+            top: 14%;
+            right: 20%;
+        }
+        #bureau {
+            position: absolute;
+            top: 18%;
+            right: 20%;
+        }
+        #today {
+            position: absolute;
+            top: 21.5%;
+            right: 20%;
+        }
+        #startDate {
+            position: absolute;
+            top: 37.5%;
+            right: 21%;
+        }
+        #endDate {
+            position: absolute;
+            top: 37.5%;
+            right: 47%;
+        }
+        #name {
+            position: absolute;
+            top: 37.5%;
+            right: 79%;
+        }
+        #address {
+            position: absolute;
+            top: 43%;
+            right: 23%;
+        }
+        #phone {
+            position: absolute;
+            top: 43.5%;
+            right: 73%;
+        }
+        #capital_societe {
+            position: absolute;
+            top: 49.2%;
+            right: 23%;
+        }
+        #tranche {
+            position: absolute;
+            top: 62.5%;
+            left: 59%;
+        }
+        /*#c11 {
+          position: absolute;
+          top: 62.5%;
+          left: 59%;
+        }*/
+        #initial {
+            position: absolute;
+            top: 66.5%;
+            left: 59%;
+        }
+        #taxe1 {
+            position: absolute;
+            top: 70.5%;
+            left: 59%;
+        }
+        #taxe2 {
+            position: absolute;
+            top: 74.5%;
+            left: 59%;
+        }
+        #taxe4 {
+            position: absolute;
+            top: 78.5%;
+            left: 59%;
+        }
+        #total {
+            position: absolute;
+            top: 82.5%;
+            left: 59%;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<p id="id"></p>
+<p id="bureau"></p>
+<p id="today"></p>
+<p id="startDate"></p>
+<p id="endDate"></p>
+<p id="name"></p>
+<p id="address"></p>
+<p id="phone"></p>
+<p id="capital_societe"></p>
+<p id="tranche"></p>
+<p id="initial"></p>
+<p id="taxe1"></p>
+<p id="taxe2"></p>
+<p id="taxe4"></p>
+<p id="total"></p>
+</body>
+
+
+<script>
+    // Function to parse query parameters from URL
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        console.log(name);
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+        const results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Retrieve query parameters and set data in HTML elements
+    const contents=document.getElementsByTagName('p')
+    for (let i = 0; i < contents.length; i++) {
+        const value = getParameterByName(contents[i].id);
+        contents[i].innerText = value || 'No Value';
+    }
+</script>
+</html>

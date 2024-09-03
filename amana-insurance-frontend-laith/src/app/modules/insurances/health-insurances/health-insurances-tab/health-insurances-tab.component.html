@@ -1,0 +1,77 @@
+<app-table [tableColumns]="tableColumns" [insurance]="true" [tableData]="healthInsurances" url="healthInsurances" [waitPrinting]="waitPrinting"  (searchEvent)="search($event)" (deleteHealthInsuranceRowEvent)="onDelete($event)" (printHealthInsuranceRowEvent)="generatePDF($event)"  [addButton]="addButton" bottomSheetManagement="healthInsurance"></app-table>
+
+
+
+<!--
+<body>
+    <div class="container">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8"><h2> تأمين  <b>صحي </b>     <button type="button" class="button b1" [routerLink]="'/sante'">إضافة  <i class="fa-solid fa-plus" style="color: #ffffff;"></i> </button><br>
+                        </h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="search-box">
+                                <i class="material-icons">&#xE8B6;</i>
+                                <input type="text" class="form-control" placeholder="بحث   &hellip;" [(ngModel)]="query" (ngModelChange)="search()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>الإسم <i class="fa fa-sort"></i></th>
+                            <th>رقم الهاتف   </th>
+                            <th>تاريخ الإنتهاء   <i class="fa fa-sort"></i></th>
+                            <th>الحالة</th>
+                            <th>نوعية التأمين</th>
+                            <th>المبلغ الإجمالي <i class="fa fa-sort"></i></th>
+                            <th>أجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let t of healthInsurances ">
+                        <tr>
+                            <td>{{t.id}}</td>
+                            <td>{{t.name}}</td>
+                            <td>{{t.phone}} </td>
+                            <td> {{t.endDate}}</td>
+
+                            <td><span class="badge bg-primary">نشيط</span><span class="badge bg-danger">معلق</span>
+                            </td>
+                            <td><span class="badge bg-primary" *ngIf="t.type==='صحي فرد'">فرد</span><span class="badge bg-secondary" *ngIf="t.type==='صحي مجموعات'">مجموعات</span></td>
+                            <td>{{t.total}}</td>
+                            <td>
+                                <a style="cursor: pointer;"  class="view" title="View" data-toggle="tooltip" (click)="generatePDF(t)"> <img src="assets\images\icons8-imprimante-48.png " height="23px" width="23px"></a>
+                                <a  style="cursor: pointer;" class="edit" title="Edit" data-toggle="tooltip" routerLink="/updateSante" [state]="{assurance:t}"><i class="material-icons">&#xE254;</i></a>
+                                <a style="cursor: pointer;" class="delete" title="Delete" data-toggle="tooltip" (click)="delete(t)"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                    </ng-container>
+
+
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <ul class="pagination">
+                      <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item "><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+-->

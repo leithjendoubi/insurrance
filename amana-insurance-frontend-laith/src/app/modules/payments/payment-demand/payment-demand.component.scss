@@ -1,0 +1,118 @@
+.form-control{
+    padding-left: 10px;
+    /*padding-top: 15px;
+    padding-bottom: 15px;*/
+    resize: none;
+    border-style:solid;
+    width: 80%;
+    display: inline;
+    margin-bottom: 20px;
+}
+.form-control:focus{
+    color: black;
+    box-shadow: none !important;
+}
+.form-select{
+    display: inline;
+    width: 70%;
+}
+
+input[type=date]{
+width: 30%;
+} 
+input[type=text]{
+  width: 50%;
+  } 
+  input[type=number]{
+    width: 50%;
+    } 
+
+
+    .form-select{
+      width: 50%;
+    }
+.card {
+    border: none;
+}
+.dis{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.shadow{
+    
+}
+.button {
+    width: 50%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin:35px 10px;
+  }
+  .b1{
+    background-color: #3a86ff;
+  }
+  .b2{
+    background-color: #9D76C1;
+  }
+  .b3{
+    background-color: #ff595e;
+  }
+h2{
+  font-weight: bold;
+  color: #3a86ff;
+}
+.card-title{
+    font-size: 30px;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+
+.bg{
+  margin-top: 0;
+  padding-bottom: 5rem;
+background-color: #f3f4f6;
+}
+.shadow1{
+    box-shadow: rgba(85, 113, 205, 0) 0px 30px 30px -20px;
+}
+.b4{
+    background-color: #8e9aaf;
+}
+
+
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select File';
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  width: 80%;
+  text-align: center;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  padding: 8px 12px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.custom-file-input:hover::before {
+  border-color: #0056b3;
+}
+.custom-file-input:active::before {
+  background: #0056b3;
+}
+.custom-file-input[aria-describedby][aria-describedby]:not(:disabled):not([aria-describedby][aria-describedby=""])::before {
+  content: 'Change File';
+}
+ 

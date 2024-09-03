@@ -1,0 +1,5 @@
+<app-add-person-health-insurance *ngIf="type==='صحي فرد'" (insuranceEvent)="onSelectionChanged($event)"
+                                 [type]="type"></app-add-person-health-insurance>
+
+<app-add-group-health-insurance *ngIf="type==='صحي مجموعات'" (insuranceEvent)="onSelectionChanged($event)"
+                                [type]="type"></app-add-group-health-insurance>

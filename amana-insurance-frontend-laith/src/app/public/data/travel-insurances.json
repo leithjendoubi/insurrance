@@ -1,0 +1,63 @@
+{
+  "insurancePeriods": [
+    {
+      "id": 1,
+      "name": "خمسة أيام",
+      "period": 5
+    },
+    {
+      "id": 2,
+      "name": "أسبوع واحد",
+      "period": 7
+    },
+    {
+      "id": 3,
+      "name": "عشرة أيام",
+      "period": 10
+    },
+    {
+      "id": 4,
+      "name": "أسبوعين",
+      "period": 14
+    },
+    {
+      "id": 5,
+      "name": "ثلاثة أسابيع",
+      "period": 21
+    },
+    {
+      "id": 6,
+      "name": "شهر واحد",
+      "period": 30
+    },
+    {
+      "id": 7,
+      "name": "شهرين",
+      "period": 60
+    },
+    {
+      "id": 8,
+      "name": "ثلاثة أشهر",
+      "period": 90
+    },
+    {
+      "id": 9,
+      "name": "ستة أشهر",
+      "period": 180
+    },
+    {
+      "id": 10,
+      "name": "سنة واحدة",
+      "period": 365
+    },
+    {
+      "id": 11,
+      "name": "سنتين",
+      "period": 730
+    }
+  ],
+  "zone": [
+    "European Countries",
+    "World Wide Except USA & Canada"
+  ]
+}

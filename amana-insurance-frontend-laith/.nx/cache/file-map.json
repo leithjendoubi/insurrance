@@ -1,0 +1,998 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.1.3",
+  "deps": {
+    "@angular/animations": "^17.0.4",
+    "@angular/cdk": "^17.0.1",
+    "@angular/common": "^17.0.4",
+    "@angular/compiler": "^17.0.4",
+    "@angular/core": "^17.0.4",
+    "@angular/forms": "^17.0.4",
+    "@angular/material": "^17.0.1",
+    "@angular/material-moment-adapter": "^17.0.4",
+    "@angular/platform-browser": "^17.0.4",
+    "@angular/platform-browser-dynamic": "^17.0.4",
+    "@angular/router": "^17.0.4",
+    "@ng-icons/circum-icons": "^26.2.0",
+    "@ng-icons/core": "^26.2.0",
+    "@ng-icons/font-awesome": "^26.2.0",
+    "@ng-icons/heroicons": "^26.2.0",
+    "@ng-icons/ionicons": "^26.2.0",
+    "@types/file-saver": "^2.0.7",
+    "chart.js": "^4.4.0",
+    "file-saver": "^2.0.5",
+    "html-to-pdfmake": "^2.5.1",
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.1",
+    "jspdf": "^2.5.1",
+    "jwt-decode": "^4.0.0",
+    "lodash-es": "^4.17.21",
+    "moment": "^2.29.4",
+    "ng-angular-popup": "^0.5.2",
+    "ng2-charts": "^5.0.3",
+    "ngx-cookie-service": "^17.0.1",
+    "papaparse": "^5.4.1",
+    "pdfmake": "^0.2.7",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "xlsx": "^0.18.5",
+    "zone.js": "~0.14.2",
+    "@angular-devkit/build-angular": "^17.0.3",
+    "@angular-eslint/builder": "17.1.1",
+    "@angular-eslint/eslint-plugin": "17.1.1",
+    "@angular-eslint/eslint-plugin-template": "17.1.1",
+    "@angular-eslint/schematics": "17.1.1",
+    "@angular-eslint/template-parser": "17.1.1",
+    "@angular/cli": "^17.0.3",
+    "@angular/compiler-cli": "^17.0.4",
+    "@angular/localize": "^17.0.4",
+    "@types/jasmine": "~4.3.0",
+    "@types/papaparse": "^5.3.11",
+    "@types/pdfmake": "^0.2.7",
+    "@typescript-eslint/eslint-plugin": "6.13.1",
+    "@typescript-eslint/parser": "6.13.1",
+    "eslint": "^8.54.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.2.2"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "17241496168097493888"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "14645878845883387518"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "4689145951703824387"
+      },
+      {
+        "file": ".nx/cache/file-map.json",
+        "hash": "15223934836784801975"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "12539509965560595520"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "7840527717060548568"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "3489799047823433694"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "11934160580685414355"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "17406702432687230417"
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "hash": "10093397977228577162"
+      },
+      {
+        "file": "README.md",
+        "hash": "2036845348330522221"
+      },
+      {
+        "file": "angular.json",
+        "hash": "16668555382677184256"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "1520904981687803517"
+      },
+      {
+        "file": "package.json",
+        "hash": "6354143588985065491"
+      },
+      {
+        "file": "proxy.conf.json",
+        "hash": "13716347290054856084"
+      },
+      {
+        "file": "src/app/app-routing.module.ts",
+        "hash": "2815616003901497112"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "17385897758380840601"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/app.component.spec.ts",
+        "hash": "10970625284581434035"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "9427395376991726101"
+      },
+      {
+        "file": "src/app/app.module.ts",
+        "hash": "9034055782309513221"
+      },
+      {
+        "file": "src/app/core/guards/auth.guard.ts",
+        "hash": "14884570278091909767"
+      },
+      {
+        "file": "src/app/core/guards/role.guard.ts",
+        "hash": "12274902960735360896"
+      },
+      {
+        "file": "src/app/core/interceptors/token.interceptor.ts",
+        "hash": "17082324077122610997"
+      },
+      {
+        "file": "src/app/core/services/auth.service.ts",
+        "hash": "14087502533092824048"
+      },
+      {
+        "file": "src/app/core/services/data.service.ts",
+        "hash": "6414034931600996933"
+      },
+      {
+        "file": "src/app/core/services/debt.service.ts",
+        "hash": "5824030416215055600"
+      },
+      {
+        "file": "src/app/core/services/group-health-insurance.service.ts",
+        "hash": "4010858208345101834"
+      },
+      {
+        "file": "src/app/core/services/obligatory-insurance.service.ts",
+        "hash": "8409860813098391474"
+      },
+      {
+        "file": "src/app/core/services/office.service.ts",
+        "hash": "8834293617211932437"
+      },
+      {
+        "file": "src/app/core/services/person-health-insurance.service.ts",
+        "hash": "4062258783557253744"
+      },
+      {
+        "file": "src/app/core/services/storage.service.ts",
+        "hash": "3588627405895525972"
+      },
+      {
+        "file": "src/app/core/services/third-party-insurance.service.ts",
+        "hash": "1395961517939079407"
+      },
+      {
+        "file": "src/app/core/services/travel-insurance.service.ts",
+        "hash": "17350349160566535266"
+      },
+      {
+        "file": "src/app/core/services/user.service.ts",
+        "hash": "10626845009504918377"
+      },
+      {
+        "file": "src/app/core/validators/confirm-password.validator.ts",
+        "hash": "15610345424200028146"
+      },
+      {
+        "file": "src/app/core/validators/my-error-state-matcher.ts",
+        "hash": "3417678626248063475"
+      },
+      {
+        "file": "src/app/modules/Mes Charts/line-chart/line-chart.component.css",
+        "hash": "18242252305404368605"
+      },
+      {
+        "file": "src/app/modules/Mes Charts/line-chart/line-chart.component.html",
+        "hash": "9661804074808143457"
+      },
+      {
+        "file": "src/app/modules/Mes Charts/line-chart/line-chart.component.ts",
+        "hash": "14149215383493258555"
+      },
+      {
+        "file": "src/app/modules/Mes Charts/mychart/mychart.component.css",
+        "hash": "8319766136582719623"
+      },
+      {
+        "file": "src/app/modules/Mes Charts/mychart/mychart.component.html",
+        "hash": "14241764862983409822"
+      },
+      {
+        "file": "src/app/modules/Mes Charts/mychart/mychart.component.ts",
+        "hash": "16279243810724214434"
+      },
+      {
+        "file": "src/app/modules/auth/login-amana/login-amana.component.html",
+        "hash": "4731040141075427841"
+      },
+      {
+        "file": "src/app/modules/auth/login-amana/login-amana.component.scss",
+        "hash": "3495191097985908409"
+      },
+      {
+        "file": "src/app/modules/auth/login-amana/login-amana.component.ts",
+        "hash": "7322309382426195568"
+      },
+      {
+        "file": "src/app/modules/auth/login-ict/login-ict.component.html",
+        "hash": "4731040141075427841"
+      },
+      {
+        "file": "src/app/modules/auth/login-ict/login-ict.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/auth/login-ict/login-ict.component.ts",
+        "hash": "1824809170655222911"
+      },
+      {
+        "file": "src/app/modules/body-component/body-component.component.html",
+        "hash": "1322445824752201617"
+      },
+      {
+        "file": "src/app/modules/body-component/body-component.component.scss",
+        "hash": "6936971358392964088"
+      },
+      {
+        "file": "src/app/modules/body-component/body-component.component.ts",
+        "hash": "7008038619353533479"
+      },
+      {
+        "file": "src/app/modules/credi/demande-payment/demande-payment.component.css",
+        "hash": "4479883546915514668"
+      },
+      {
+        "file": "src/app/modules/credi/demande-payment/demande-payment.component.html",
+        "hash": "16656594336491442134"
+      },
+      {
+        "file": "src/app/modules/credi/demande-payment/demande-payment.component.ts",
+        "hash": "17057132579836768432"
+      },
+      {
+        "file": "src/app/modules/credi/payment/payment.component.css",
+        "hash": "4479883546915514668"
+      },
+      {
+        "file": "src/app/modules/credi/payment/payment.component.html",
+        "hash": "383731004384390091"
+      },
+      {
+        "file": "src/app/modules/credi/payment/payment.component.ts",
+        "hash": "4416268179199750216"
+      },
+      {
+        "file": "src/app/modules/credi/payment-tab/payment-tab.component.css",
+        "hash": "14457899341023944222"
+      },
+      {
+        "file": "src/app/modules/credi/payment-tab/payment-tab.component.html",
+        "hash": "13961514832064710492"
+      },
+      {
+        "file": "src/app/modules/credi/payment-tab/payment-tab.component.ts",
+        "hash": "11651059987814343655"
+      },
+      {
+        "file": "src/app/modules/dashboard/dashboard.component.html",
+        "hash": "7552476525595030194"
+      },
+      {
+        "file": "src/app/modules/dashboard/dashboard.component.scss",
+        "hash": "13002497875448925033"
+      },
+      {
+        "file": "src/app/modules/dashboard/dashboard.component.ts",
+        "hash": "4377095436452485276"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-group-health-insurance/add-group-health-insurance.component.html",
+        "hash": "9747955914831596612"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-group-health-insurance/add-group-health-insurance.component.scss",
+        "hash": "3934002344124004583"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-group-health-insurance/add-group-health-insurance.component.ts",
+        "hash": "10876259847289368354"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-health-insurance.component.html",
+        "hash": "5509065612510245154"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-health-insurance.component.scss",
+        "hash": "9177671341051997120"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-health-insurance.component.ts",
+        "hash": "1314987450842914001"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-person-health-insurance/add-person-health-insurance.component.html",
+        "hash": "4349105057999775159"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-person-health-insurance/add-person-health-insurance.component.scss",
+        "hash": "14672297596979334797"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/add-health-insurance/add-person-health-insurance/add-person-health-insurance.component.ts",
+        "hash": "13067170639456532084"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/health-insurances-tab/health-insurances-tab.component.html",
+        "hash": "3520358802592437473"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/health-insurances-tab/health-insurances-tab.component.scss",
+        "hash": "14457899341023944222"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/health-insurances-tab/health-insurances-tab.component.ts",
+        "hash": "9887066165864234885"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-group-health-insurance/update-group-health-insurance.component.html",
+        "hash": "354397931110947930"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-group-health-insurance/update-group-health-insurance.component.scss",
+        "hash": "3934002344124004583"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-group-health-insurance/update-group-health-insurance.component.ts",
+        "hash": "6146700700342614440"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-health-insurance.component.html",
+        "hash": "12337807448382729288"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-health-insurance.component.scss",
+        "hash": "1322153304383279721"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-health-insurance.component.ts",
+        "hash": "5575831324919213294"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-person-health-insurance/update-person-health-insurance.component.html",
+        "hash": "354397931110947930"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-person-health-insurance/update-person-health-insurance.component.scss",
+        "hash": "3934002344124004583"
+      },
+      {
+        "file": "src/app/modules/insurances/health-insurances/update-health-insurance/update-person-health-insurance/update-person-health-insurance.component.ts",
+        "hash": "5561301195064726774"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/add-obligatory-insurance/add-obligatory-insurance.component.html",
+        "hash": "8036449897231791557"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/add-obligatory-insurance/add-obligatory-insurance.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/add-obligatory-insurance/add-obligatory-insurance.component.ts",
+        "hash": "6494211286990163029"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/obligatory-insurances-tab/obligatory-insurances-tab.component.html",
+        "hash": "17217924552726921914"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/obligatory-insurances-tab/obligatory-insurances-tab.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/obligatory-insurances-tab/obligatory-insurances-tab.component.ts",
+        "hash": "8452581410294704647"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/update-obligatory-insurance/update-obligatory-insurance.component.html",
+        "hash": "2323345514415370357"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/update-obligatory-insurance/update-obligatory-insurance.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/insurances/obligatory-insurances/update-obligatory-insurance/update-obligatory-insurance.component.ts",
+        "hash": "9736447405951602784"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/add-third-party-insurance/add-third-party-insurance.component.html",
+        "hash": "18079831500380726084"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/add-third-party-insurance/add-third-party-insurance.component.scss",
+        "hash": "3974500409279702218"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/add-third-party-insurance/add-third-party-insurance.component.ts",
+        "hash": "13139346445838499537"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/third-party-insurances-tab/third-party-insurances-tab.component.html",
+        "hash": "86335978939938502"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/third-party-insurances-tab/third-party-insurances-tab.component.scss",
+        "hash": "14457899341023944222"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/third-party-insurances-tab/third-party-insurances-tab.component.ts",
+        "hash": "7386809501926386856"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/update-third-party-insurance/update-third-party-insurance.component.html",
+        "hash": "16458327243875620774"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/update-third-party-insurance/update-third-party-insurance.component.scss",
+        "hash": "1997869689216860362"
+      },
+      {
+        "file": "src/app/modules/insurances/third-party-insurances/update-third-party-insurance/update-third-party-insurance.component.ts",
+        "hash": "7255706393928526342"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/add-travel-insurance/add-travel-insurance.component.html",
+        "hash": "7258239046301314801"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/add-travel-insurance/add-travel-insurance.component.scss",
+        "hash": "11438835200929869947"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/add-travel-insurance/add-travel-insurance.component.ts",
+        "hash": "3485770074201876004"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/travel-insurances-tab/travel-insurances-tab.component.html",
+        "hash": "9659421726254364873"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/travel-insurances-tab/travel-insurances-tab.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/travel-insurances-tab/travel-insurances-tab.component.ts",
+        "hash": "7603687553772661703"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/update-travel-insurance/update-travel-insurance.component.html",
+        "hash": "3234945834069142962"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/update-travel-insurance/update-travel-insurance.component.scss",
+        "hash": "1322153304383279721"
+      },
+      {
+        "file": "src/app/modules/insurances/travel-insurances/update-travel-insurance/update-travel-insurance.component.ts",
+        "hash": "7420796169579078263"
+      },
+      {
+        "file": "src/app/modules/offices/add-office/add-office.component.html",
+        "hash": "7064841887756251770"
+      },
+      {
+        "file": "src/app/modules/offices/add-office/add-office.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/offices/add-office/add-office.component.ts",
+        "hash": "5081446689022043119"
+      },
+      {
+        "file": "src/app/modules/offices/offices-tab/offices-tab.component.html",
+        "hash": "13549925419197109498"
+      },
+      {
+        "file": "src/app/modules/offices/offices-tab/offices-tab.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/offices/offices-tab/offices-tab.component.ts",
+        "hash": "13032622508965998935"
+      },
+      {
+        "file": "src/app/modules/offices/update-office/update-office.component.html",
+        "hash": "6320049170216227132"
+      },
+      {
+        "file": "src/app/modules/offices/update-office/update-office.component.scss",
+        "hash": "1997869689216860362"
+      },
+      {
+        "file": "src/app/modules/offices/update-office/update-office.component.ts",
+        "hash": "16610995157986216859"
+      },
+      {
+        "file": "src/app/modules/reports/all-insurances-report/all-insurances-report.component.html",
+        "hash": "2910068816097727615"
+      },
+      {
+        "file": "src/app/modules/reports/all-insurances-report/all-insurances-report.component.scss",
+        "hash": "10735170101267552332"
+      },
+      {
+        "file": "src/app/modules/reports/all-insurances-report/all-insurances-report.component.ts",
+        "hash": "787969622692311999"
+      },
+      {
+        "file": "src/app/modules/reports/choose-report/choose-report.component.html",
+        "hash": "1225179062075674336"
+      },
+      {
+        "file": "src/app/modules/reports/choose-report/choose-report.component.scss",
+        "hash": "517871413973719256"
+      },
+      {
+        "file": "src/app/modules/reports/choose-report/choose-report.component.ts",
+        "hash": "2652018586834339660"
+      },
+      {
+        "file": "src/app/modules/reports/health-insurance-report/health-insurance-report.component.html",
+        "hash": "8446278770406548669"
+      },
+      {
+        "file": "src/app/modules/reports/health-insurance-report/health-insurance-report.component.scss",
+        "hash": "6686967682839617005"
+      },
+      {
+        "file": "src/app/modules/reports/health-insurance-report/health-insurance-report.component.ts",
+        "hash": "122763050426682067"
+      },
+      {
+        "file": "src/app/modules/reports/obligatory-insurance-report/obligatory-insurance-report.component.html",
+        "hash": "2529748282693482703"
+      },
+      {
+        "file": "src/app/modules/reports/obligatory-insurance-report/obligatory-insurance-report.component.scss",
+        "hash": "330345535646520143"
+      },
+      {
+        "file": "src/app/modules/reports/obligatory-insurance-report/obligatory-insurance-report.component.ts",
+        "hash": "16820279119151055839"
+      },
+      {
+        "file": "src/app/modules/reports/third-party-insurance-report/third-party-insurance-report.component.html",
+        "hash": "6132340203214877850"
+      },
+      {
+        "file": "src/app/modules/reports/third-party-insurance-report/third-party-insurance-report.component.scss",
+        "hash": "6686967682839617005"
+      },
+      {
+        "file": "src/app/modules/reports/third-party-insurance-report/third-party-insurance-report.component.ts",
+        "hash": "14026128356330087808"
+      },
+      {
+        "file": "src/app/modules/reports/travel-insurance-report/travel-insurance-report.component.html",
+        "hash": "6830681354028044848"
+      },
+      {
+        "file": "src/app/modules/reports/travel-insurance-report/travel-insurance-report.component.scss",
+        "hash": "6686967682839617005"
+      },
+      {
+        "file": "src/app/modules/reports/travel-insurance-report/travel-insurance-report.component.ts",
+        "hash": "8543893467820569450"
+      },
+      {
+        "file": "src/app/modules/users/add-user/add-user.component.html",
+        "hash": "196885748010914952"
+      },
+      {
+        "file": "src/app/modules/users/add-user/add-user.component.scss",
+        "hash": "10316650043443041703"
+      },
+      {
+        "file": "src/app/modules/users/add-user/add-user.component.ts",
+        "hash": "927180478274034437"
+      },
+      {
+        "file": "src/app/modules/users/update-user/update-user.component.html",
+        "hash": "9600815798075295159"
+      },
+      {
+        "file": "src/app/modules/users/update-user/update-user.component.scss",
+        "hash": "14059783882861620800"
+      },
+      {
+        "file": "src/app/modules/users/update-user/update-user.component.ts",
+        "hash": "18320986147213113034"
+      },
+      {
+        "file": "src/app/modules/users/user-tab/user-tab.component.html",
+        "hash": "12242752559560880883"
+      },
+      {
+        "file": "src/app/modules/users/user-tab/user-tab.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/users/user-tab/user-tab.component.ts",
+        "hash": "5905842876238587358"
+      },
+      {
+        "file": "src/app/public/components/dialog/dialog.component.html",
+        "hash": "770586163749485220"
+      },
+      {
+        "file": "src/app/public/components/dialog/dialog.component.scss",
+        "hash": "15422386227506659854"
+      },
+      {
+        "file": "src/app/public/components/dialog/dialog.component.ts",
+        "hash": "1095908314713223153"
+      },
+      {
+        "file": "src/app/public/components/form/form.component.html",
+        "hash": "7536323249611417342"
+      },
+      {
+        "file": "src/app/public/components/form/form.component.scss",
+        "hash": "6871003883222346240"
+      },
+      {
+        "file": "src/app/public/components/form/form.component.ts",
+        "hash": "7846656700177405208"
+      },
+      {
+        "file": "src/app/public/components/index.ts",
+        "hash": "3254228593336645797"
+      },
+      {
+        "file": "src/app/public/components/login/login.component.html",
+        "hash": "2159965596323797431"
+      },
+      {
+        "file": "src/app/public/components/login/login.component.scss",
+        "hash": "10604445063373623579"
+      },
+      {
+        "file": "src/app/public/components/login/login.component.ts",
+        "hash": "11218742341623023092"
+      },
+      {
+        "file": "src/app/public/components/mat-custom-button/mat-custom-button.component.html",
+        "hash": "7352639160001930944"
+      },
+      {
+        "file": "src/app/public/components/mat-custom-button/mat-custom-button.component.scss",
+        "hash": "17656301792250085061"
+      },
+      {
+        "file": "src/app/public/components/mat-custom-button/mat-custom-button.component.ts",
+        "hash": "4051882298890988803"
+      },
+      {
+        "file": "src/app/public/components/report-form/report-form.component.html",
+        "hash": "6088779052865221202"
+      },
+      {
+        "file": "src/app/public/components/report-form/report-form.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/public/components/report-form/report-form.component.ts",
+        "hash": "3893760323298639468"
+      },
+      {
+        "file": "src/app/public/components/side-navbar/side-navbar.component.html",
+        "hash": "11612596357277662319"
+      },
+      {
+        "file": "src/app/public/components/side-navbar/side-navbar.component.scss",
+        "hash": "17129689925400030228"
+      },
+      {
+        "file": "src/app/public/components/side-navbar/side-navbar.component.ts",
+        "hash": "5577661505012899745"
+      },
+      {
+        "file": "src/app/public/components/table/table.component.html",
+        "hash": "14947507674485466541"
+      },
+      {
+        "file": "src/app/public/components/table/table.component.scss",
+        "hash": "1538558522765282731"
+      },
+      {
+        "file": "src/app/public/components/table/table.component.ts",
+        "hash": "10847348709381327564"
+      },
+      {
+        "file": "src/app/public/data/global-data.json",
+        "hash": "13210110083700947219"
+      },
+      {
+        "file": "src/app/public/data/health-insurance.json",
+        "hash": "11530487083756465798"
+      },
+      {
+        "file": "src/app/public/data/index.ts",
+        "hash": "15779043688892332291"
+      },
+      {
+        "file": "src/app/public/data/obligatory-insurances.json",
+        "hash": "4181475781214722250"
+      },
+      {
+        "file": "src/app/public/data/travel-insurances.json",
+        "hash": "6864620477221388061"
+      },
+      {
+        "file": "src/app/public/enum/Role.ts",
+        "hash": "25334557700337229"
+      },
+      {
+        "file": "src/app/public/helpers/DatesHelper.ts",
+        "hash": "8009281241776212989"
+      },
+      {
+        "file": "src/app/public/helpers/NavbarHelper.ts",
+        "hash": "16442297227810449404"
+      },
+      {
+        "file": "src/app/public/helpers/ObjectsHelper.ts",
+        "hash": "5012215194601590352"
+      },
+      {
+        "file": "src/app/public/helpers/TablesHelper.ts",
+        "hash": "8890382181338103579"
+      },
+      {
+        "file": "src/app/public/helpers/TaxesHelper.ts",
+        "hash": "14749449527707241409"
+      },
+      {
+        "file": "src/app/public/models/debt.model.ts",
+        "hash": "4175014941468283946"
+      },
+      {
+        "file": "src/app/public/models/group-health-insurance.model.ts",
+        "hash": "4568467000281154785"
+      },
+      {
+        "file": "src/app/public/models/health-insurance.model.ts",
+        "hash": "605796008264684340"
+      },
+      {
+        "file": "src/app/public/models/insurance.model.ts",
+        "hash": "9093276969635823709"
+      },
+      {
+        "file": "src/app/public/models/login-response.model.ts",
+        "hash": "10500271697142489037"
+      },
+      {
+        "file": "src/app/public/models/login-user.model.ts",
+        "hash": "12508704842896982030"
+      },
+      {
+        "file": "src/app/public/models/obligatory-insurance.model.ts",
+        "hash": "2554575150366603874"
+      },
+      {
+        "file": "src/app/public/models/office.model.ts",
+        "hash": "4005848002911872897"
+      },
+      {
+        "file": "src/app/public/models/person-health-insurance.model.ts",
+        "hash": "1794979683265893475"
+      },
+      {
+        "file": "src/app/public/models/third-party-insurance.model.ts",
+        "hash": "5073297804979749607"
+      },
+      {
+        "file": "src/app/public/models/travel-insurance.model.ts",
+        "hash": "13795718846621972675"
+      },
+      {
+        "file": "src/app/public/models/user.model.ts",
+        "hash": "11773562309066565454"
+      },
+      {
+        "file": "src/app/public/shared/Period.ts",
+        "hash": "14347909156127228386"
+      },
+      {
+        "file": "src/app/public/shared/card.ts",
+        "hash": "10886478555633438951"
+      },
+      {
+        "file": "src/app/public/shared/column.ts",
+        "hash": "9540031948981643058"
+      },
+      {
+        "file": "src/app/public/shared/dialog.ts",
+        "hash": "9370196492656224632"
+      },
+      {
+        "file": "src/app/public/shared/error-msgs.ts",
+        "hash": "16452545064250105023"
+      },
+      {
+        "file": "src/app/public/shared/form-field.ts",
+        "hash": "10087780788031228087"
+      },
+      {
+        "file": "src/app/public/shared/my-form.ts",
+        "hash": "5920144234987019068"
+      },
+      {
+        "file": "src/app/public/shared/navbar-data.ts",
+        "hash": "9660780894450115467"
+      },
+      {
+        "file": "src/app/public/shared/side-nav-toggle.ts",
+        "hash": "13264916535911048905"
+      },
+      {
+        "file": "src/app/styles/_variables.scss",
+        "hash": "17610685835918861690"
+      },
+      {
+        "file": "src/app/styles/theme.scss",
+        "hash": "11391939999550622851"
+      },
+      {
+        "file": "src/assets/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/assets/images/2012.i105.005..isolated insurance flowchart.jpg",
+        "hash": "6966303991876232254"
+      },
+      {
+        "file": "src/assets/images/43023.jpg",
+        "hash": "13903892036238206352"
+      },
+      {
+        "file": "src/assets/images/58df6aaf-ca4a-4229-9fa2-ecd143e2cf1f (1).jpeg",
+        "hash": "6692402236635667763"
+      },
+      {
+        "file": "src/assets/images/8837604.jpg",
+        "hash": "795195982052146451"
+      },
+      {
+        "file": "src/assets/images/Frame.png",
+        "hash": "6466968948113523730"
+      },
+      {
+        "file": "src/assets/images/avatar.svg",
+        "hash": "12791270942093158669"
+      },
+      {
+        "file": "src/assets/images/danial.png",
+        "hash": "966117205548299074"
+      },
+      {
+        "file": "src/assets/images/icons8-imprimante-48.png",
+        "hash": "4663872540603819061"
+      },
+      {
+        "file": "src/assets/images/insurance-concept-insurance-policy-money-guarantee-vector-illustration_123447-3808.avif",
+        "hash": "14677766431290818298"
+      },
+      {
+        "file": "src/assets/images/insurance.jpg",
+        "hash": "1689194292622839468"
+      },
+      {
+        "file": "src/assets/images/login.jpg",
+        "hash": "7590891022731245764"
+      },
+      {
+        "file": "src/assets/images/loginimage.jpg",
+        "hash": "17520000444719332746"
+      },
+      {
+        "file": "src/assets/images/logo amana.png",
+        "hash": "12997815893281013591"
+      },
+      {
+        "file": "src/assets/images/logo ictclinic.png",
+        "hash": "10971660964075959744"
+      },
+      {
+        "file": "src/assets/images/logo1.jpeg",
+        "hash": "8632366601976260834"
+      },
+      {
+        "file": "src/assets/images/logo_amana.svg",
+        "hash": "15133666918663305830"
+      },
+      {
+        "file": "src/assets/images/wave.png",
+        "hash": "13377549878712186789"
+      },
+      {
+        "file": "src/environments/environment.prod.ts",
+        "hash": "11177869025129425571"
+      },
+      {
+        "file": "src/environments/environment.staging.ts",
+        "hash": "7774049267642898862"
+      },
+      {
+        "file": "src/environments/environment.ts",
+        "hash": "15914061067855746373"
+      },
+      {
+        "file": "src/favicon.ico",
+        "hash": "3464744996580215640"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "12345541115945706215"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "11407094168179300205"
+      },
+      {
+        "file": "src/styles.scss",
+        "hash": "14508166711663932221"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "366722516949793923"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "5129391141365440689"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "5059954046679394591"
+      }
+    ]
+  }
+}

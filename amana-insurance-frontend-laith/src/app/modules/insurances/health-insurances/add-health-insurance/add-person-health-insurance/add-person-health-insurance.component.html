@@ -1,0 +1,259 @@
+<app-form [addForm]="true" return_link="/dashboard/healthInsurances" [myForm]="myForm" (onSubmitEvent)="onSubmit()"></app-form>
+
+
+<!--
+<div class="card shadow1 mt-5 ">
+  <div class="card-body">
+    <h4 class="card-title text-center ">معلومات عن التأمين </h4>
+    <div class="row">
+
+      <div class="col-4">
+        <div class="dis">
+          <label>نوعية التأمين </label>
+          <select class="form-select" [(ngModel)]="insurance_type"
+                  [ngClass]="!insurance_type && verife?'form-select error-border':'form-select'" (change)="changeType(getValue($event))">&lt;!&ndash;(change)="changerInfo()"&ndash;&gt;
+            <option value="مجموعات">مجموعات</option>
+            <option selected value="فرد">فرد</option>
+
+          </select>
+
+        </div>
+
+      </div>
+      <div class="col-4">
+        <div class="dis">
+          <label>فترة التأمين </label>
+          <select class="form-select" [(ngModel)]="periode" (change)="changeroption1()">
+
+            <option selected value="سنة">سنة</option>
+
+          </select>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dis">
+          <p> المهنة </p>
+          <select [(ngModel)]="personHealthInsurance.job" (change)="CalculTaxe()"
+                  [ngClass]="(!personHealthInsurance.job || personHealthInsurance.job === 'إختر المهنة') && verife?'form-select error-border':'form-select' ">
+            <option style="font-weight: bold">إختر المهنة</option>
+            <option value="أطباء و مستشارين" selected>أطباء و مستشارين</option>
+            <option value="شبه طبي" selected> شبه طبي</option>
+
+          </select>
+        </div>
+        <div *ngIf="(!personHealthInsurance.job || personHealthInsurance.job === 'إختر المهنة')  && verife" class="msg_error text-center mt-0">
+          *المهنة إجباري
+        </div>
+
+      </div>
+      <div class="row">
+
+
+        <div class="col-12">
+          <div class="dis">
+            <p> التغطية من </p>
+            <input type="date" class="form-control" [(ngModel)]="startDate" (change)="changeroption1()"/>
+            إلى
+            <input type="date" class="form-control" [(ngModel)]="endDate" disabled/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+
+    </div>
+  </div>
+
+</div>
+<div class="card 1 mt-5 ">
+  <div class="card-body">
+    <h4 class="card-title text-center ">  {{info}}     </h4>
+    <div class="row">
+      <div class="col-4">
+        <div class="dis">
+
+          <p>  {{non_info}}  </p>
+          <input type="text"
+                 [ngClass]="!personHealthInsurance.name && verife ? 'form-control error-border' : 'form-control' "
+                 [(ngModel)]="personHealthInsurance.name"/>
+
+        </div>
+        <div *ngIf="!personHealthInsurance.name  && verife" class="msg_error text-center mt-0">
+          *  {{non_info}}  إجباري
+        </div>
+
+      </div>
+      <ng-container>
+
+        <div class="col-4">
+          <div class="dis">
+            <p> تاريخ الميلاد </p>
+            <input type="date" [ngClass]="!ageInput && verife ? 'form-control error-border' : 'form-control' "
+                   [(ngModel)]="ageInput" style="width: 50%;" (change)="calculeAge()"/>
+          </div>
+          <div *ngIf="!ageInput  && verife" class="msg_error text-center mt-0">
+            * تاريخ الميلاد إجباري
+          </div>
+
+        </div>
+        <div class="col-4">
+          <div class="dis">
+            <p> الجنسية </p>
+            <select [(ngModel)]="personHealthInsurance.nationalite"
+                    [ngClass]="(!personHealthInsurance.nationalite || personHealthInsurance.nationalite === 'إختر جنسية المؤمن')  && verife ?'form-select error-border' : 'form-select' ">
+              <option style="font-weight: bold">إختر جنسية المؤمن</option>
+              <option *ngFor="let country of pays" [value]="country">{{ country }}</option>
+            </select>
+
+          </div>
+          <div *ngIf="(!personHealthInsurance.nationalite || personHealthInsurance.nationalite === 'إختر جنسية المؤمن')  && verife" class="msg_error text-center mt-0">
+            * الجنسية إجباري
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="dis">
+            <p> الجنس </p>
+            <select [(ngModel)]="personHealthInsurance.sex"
+                    [ngClass]="(!personHealthInsurance.sex || personHealthInsurance.sex === 'إختر الجنس')  && verife ?'form-select error-border':'form-select' ">
+              <option style="font-weight: bold">إختر الجنس</option>
+              <option value="ذكر">ذكر</option>
+              <option value="أنثى">أنثى</option>
+
+            </select>
+          </div>
+          <div *ngIf="(!personHealthInsurance.sex || personHealthInsurance.sex === 'إختر الجنس')  && verife" class="msg_error text-center mt-0">
+            * الجنس إجباري
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="dis">
+            <p>رقم جواز السفر </p>
+
+            <input type="text"
+                   [ngClass]="!personHealthInsurance.numero_passport && verife ?'form-control error-border':'form-control' "
+                   [(ngModel)]="personHealthInsurance.numero_passport"/>
+          </div>
+          <div *ngIf="!personHealthInsurance.numero_passport  && verife" class="msg_error text-center mt-0">
+            * رقم جواز السفر إجباري
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-4">
+        <div class="dis">
+          <p> رقم الهاتف</p>
+          <input type="tel"
+                 [ngClass]="!personHealthInsurance.phone && verife ? 'form-control error-border':'form-control' "
+                 [(ngModel)]="personHealthInsurance.phone"/>
+        </div>
+        <div *ngIf="!personHealthInsurance.phone  && verife"
+             class="msg_error text-center mt-0">
+          * رقم الهاتف إجباري
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dis">
+          <p> العنوان</p>
+          <input type="text"
+                 [ngClass]="!personHealthInsurance.address && verife ? 'form-control error-border' : 'form-control' "
+                 [(ngModel)]="personHealthInsurance.address"/>
+        </div>
+        <div *ngIf="!personHealthInsurance.address  && verife"
+             class="msg_error text-center mt-0">
+          * العنوان إجباري
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="dis">
+          <p> طريقة الدفع </p>
+          <select class="form-select"
+                  [(ngModel)]="personHealthInsurance.methode_paiement"
+                  [ngClass]="!personHealthInsurance.methode_paiement && verife ? 'form-select error-border' : 'form-select' ">
+            <option selected value="نقدا">نقدا</option>
+            <option selected value="على الحساب">على الحساب</option>
+
+          </select>
+        </div>
+        <div
+          *ngIf="!personHealthInsurance.methode_paiement  && verife"
+          class="msg_error text-center mt-0">
+          * طريقة الدفع إجباري
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card shadow1 mt-5 ">
+  <div class="card-body">
+    <h4 class="card-title text-center ">حساب الضرائب </h4>
+
+    <div class="row">
+
+      <div class="col-4">
+        <div class="dis">
+          <p>القسط الصافي</p>
+          <input type="number" class="form-control" style="width: 40%;"
+                 [(ngModel)]="personHealthInsurance.initial"/>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="dis">
+          <p>الضريبة</p>
+
+          <input type="number" class="form-control"
+                 [(ngModel)]="personHealthInsurance.taxe1" style="width: 40%;"
+                 [value]="personHealthInsurance.taxe1"/>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dis">
+          <p>الدمغة</p>
+          <input type="number" class="form-control"
+                 [(ngModel)]="personHealthInsurance.taxe2" style="width: 40%;"
+                 [value]="personHealthInsurance.taxe2"/>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dis">
+          <p>الإشراف و الرقابة</p>
+          <input type="number" class="form-control" [(ngModel)]="personHealthInsurance.taxe3" style="width: 40%;"
+                 [value]="personHealthInsurance.taxe3"/>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dis">
+          <p>م الإصدار</p>
+          <input type="number" class="form-control"
+                 [(ngModel)]="personHealthInsurance.taxe4" style="width: 40%;"
+                 [value]="personHealthInsurance.taxe4"/>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dis">
+          <p>الإجمالي</p>
+          <input type="number" class="form-control"
+                 [(ngModel)]="personHealthInsurance.total" style="width: 40%;"
+                 [value]="personHealthInsurance.total"/>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="dis">
+    <button type="button" class="button b1" (click)="OnRecuper()">إضافة <i class="fa-solid fa-plus"
+                                                                           style="color: #ffffff;"></i></button>
+    <button type="button" class="button b2">طباعة <i class="fa-solid fa-download" style="color: #ffffff;"></i></button>
+    <button type="button" class="button b3" routerLink="/dashboard">إلغاء <i class="fa-solid fa-right-from-bracket"
+                                                                             style="color: #ffffff;"></i></button>
+  </div>
+</div>
+-->

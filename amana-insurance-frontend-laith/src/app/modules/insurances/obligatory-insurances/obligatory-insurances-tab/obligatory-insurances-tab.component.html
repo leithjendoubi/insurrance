@@ -1,0 +1,1 @@
+<app-table [tableColumns]="tableColumns" [insurance]="true" [tableData]="obligatoryInsurances" url="obligatoryInsurances"  (searchEvent)="search($event)" (deleteRowEvent)="onDelete($event)" (printEvent)="generatePDF($event)" [waitPrinting]="waitPrinting"  [addButton]="addButton"></app-table>

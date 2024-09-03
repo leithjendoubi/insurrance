@@ -1,0 +1,140 @@
+<app-form [report]="true" return_link="/dashboard/reports" [myForm]="myForm" (onSubmitEvent)="onSubmit()"
+          [tableColumns]="tableColumns" [tableData]="healthInsurances" XLSXFilename="تقرير_التأمينات_الصحية"
+          [showTable]="showTable" [totalReport]="total" [isLoadingSearch]="isLoadingSearch"></app-form>
+
+
+
+<!--
+<div class="bg pt-5  ">
+  <div class="container ">
+
+    &lt;!&ndash; card 1&ndash;&gt;
+    <div class="card shadow1 mt-5 ">
+      <div class="card-body">
+        <h4 class="card-title text-center "> معلومات عن التأمين صحي </h4>
+        <div class="row">
+
+          <div class="col-6" *ngIf="actualUser.role==Role.Finance || actualUser.role==Role.Admin">
+            <div class="dis">
+              <label> البحث بإسم المكتب </label>
+              <select class="form-select" [(ngModel)]="bureauId"
+                      (ngModelChange)="data.fetchUsersBySelectedOffice(bureauId)">
+                <option [value]="-1" style="font-weight: bolder">اختر إسم المكتب</option>
+                <option *ngFor="let b of data.offices" [value]="b.id">{{b.name}}</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="col-4" *ngIf="actualUser.role!=Role.User">
+            <div class="dis">
+              <label>البحث بإسم المستخدم </label>
+              <select class="form-select" [(ngModel)]="userId" *ngIf="actualUser.role===Role.Director">
+                <option [value]="-1" style="font-weight: bolder">اختر إسم المستخدم</option>
+                <option *ngFor="let u of data.officeUsers" [value]="u.id">{{u.username}}</option>
+              </select>
+              <select class="form-select" [(ngModel)]="userId" *ngIf="actualUser.role===Role.Admin">
+                <option [value]="-1" style="font-weight: bolder">اختر إسم المستخدم</option>
+                <option *ngFor="let u of data.selectedOfficeUsers" [value]="u.id">{{u.username}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dis" *ngIf="actualUser.role!=Role.Finance">
+              <label>نوعية التأمين</label>
+              <select class="form-select" [(ngModel)]="type">
+                <option value="صحي مجموعات">مجموعات</option>
+                <option selected value="صحي فرد">فرد</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-4" *ngIf="actualUser.role!=Role.Finance && type==='person'">
+            <div class="dis">
+              <p> رقم جواز السفر </p>
+              <input type="text" class="form-control" [(ngModel)]="numero_passport" style="width: 50%;"/>
+            </div>
+          </div>
+          <div class="row">
+
+
+            <div class="col-12">
+              <div class="dis">
+                <p> إختر تاريخ ما بين </p>
+                <input type="date" class="form-control" [(ngModel)]="startDate"/>
+
+                الى التاريخ
+                <input type="date" class="form-control" [(ngModel)]="endDate"/>
+              </div>
+            </div>
+
+            <div class="table-wrapper-scroll-xy my-custom-scrollbar" *ngIf="show">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped mb-0">
+                  <thead>
+                  <tr style="background-color: #3a86ff;color:white">
+                    <th scope="col">إجــمـالـــي البيـــــع</th>
+                    <th scope="col">{{total}} دينار ليبي</th>
+                  </tr>
+                  </thead>
+                  <thead>
+                  <tr>
+                    <th scope="col">رقم البطاقة</th>
+                    <th scope="col" *ngIf="type==='صحي فرد'">إسم العميل</th>
+                    <th scope="col" *ngIf="type==='صحي مجموعات'">إسم الجهة</th>
+                    <th scope="col" *ngIf="type===''">إسم العميل / إسم الجهة</th>
+                    <th scope="col" *ngIf="actualUser.role!=Role.User">أضيفت بواسطة</th>
+                    <th scope="col" *ngIf="actualUser.role===Role.Admin || actualUser.role===Role.Finance">إسم المكتب
+                    </th>
+                    <th scope="col">التغطية من</th>
+                    <th scope="col">إلى</th>
+                    <th>نوعية التأمين</th>
+                    <th scope="col">المبلغ الإجمالي</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let ass of assurances">
+                    <th scope="row">{{ass.id}}</th>
+                    <td>{{ass.name}}</td>
+                    <td *ngIf="actualUser.role!=Role.User">{{ass.user.username}}</td>
+                    <td
+                      *ngIf="actualUser.role===Role.Admin || actualUser.role===Role.Finance">{{ass.user.bureau.name}}</td>
+                    <td>{{ass.startDate}}</td>
+                    <td>{{ass.endDate}}</td>
+                    <td><span class="badge bg-primary" *ngIf="ass.type==='صحي فرد'">فرد</span><span
+                      class="badge bg-secondary" *ngIf="ass.type==='صحي مجموعات'">مجموعات</span></td>
+                    <td>{{ass.total}}</td>
+                  </tr>
+                  &lt;!&ndash; Add more rows as needed &ndash;&gt;
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="dis ">
+              <button type="button" class="button b1" (click)="search()">بحث <i class="fa-solid fa-magnifying-glass"
+                                                                                style="color: #ffffff;"></i></button>
+              <button type="button" class="button b2">طباعة pdf <i class="fa-solid fa-file-pdf"
+                                                                   style="color: #ffffff;"></i></button>
+              <button type="button" class="button b4" (click)="downloadCSV()">طباعة xls <i
+                class="fa-solid fa-file-excel" style="color: #ffffff;"></i></button>
+              <button type="button" class="button b3" routerLink="/dashboard">إلغاء <i
+                class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i></button>
+            </div>
+          </div>
+        </div>
+        &lt;!&ndash;ligne 3&ndash;&gt;
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+-->

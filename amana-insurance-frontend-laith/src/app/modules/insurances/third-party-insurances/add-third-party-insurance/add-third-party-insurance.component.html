@@ -1,0 +1,424 @@
+<app-form [addForm]="true" return_link="/dashboard/thirdPartyInsurances" [myForm]="myForm" (onSubmitEvent)="onSubmit()"></app-form>
+
+
+<!--
+<div class="bg">
+    <div class="container ">
+
+
+
+    <h2 class="text-center pt-5">إضافة تأمين طرف ثالث</h2>
+
+     &lt;!&ndash; card 1&ndash;&gt;
+     <div class="card shadow1 mt-5 ">
+        <div class="card-body">
+          <h4 class="card-title text-center ">معلومات عن التأمين </h4>
+    <div class="row">
+        <div class="col-4">
+            <div class="dis">
+                <p> الإسم</p>
+                <input type="text"   [(ngModel)]="thirdPartyInsurance.name"   [ngClass]="!thirdPartyInsurance.name && verife?'form-control error-border':'form-control' " >
+            </div>
+            <div *ngIf="!thirdPartyInsurance.name  && verife" class="msg_error text-center mt-0">
+                *    الإسم إجباري
+          </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+            <label>العنوان </label>
+            <input type="text"  [ngClass]="!thirdPartyInsurance.address && verife?'form-control error-border':'form-control' "   [(ngModel)]="thirdPartyInsurance.address" >
+
+                </div>
+                <div *ngIf="!thirdPartyInsurance.address  && verife" class="msg_error text-center mt-0">
+                    *    العنوان إجباري
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+            <label>رقم هاتف </label>
+            <input type="text" [ngClass]="!thirdPartyInsurance.phone && verife?'form-control error-border':'form-control' " [(ngModel)]="thirdPartyInsurance.phone" >
+            </div>
+            <div *ngIf="!thirdPartyInsurance.phone  && verife" class="msg_error text-center mt-0">
+                *    رقم هاتف  إجباري
+          </div>
+        </div>
+
+        <div class="col-4">
+            <div class="dis">
+                <p> إسم السائق                </p>
+                <input type="text"  [ngClass]="!thirdPartyInsurance.driver_name && verife?'form-control error-border':'form-control' " [(ngModel)]="thirdPartyInsurance.driver_name"   >
+            </div>
+            <div *ngIf="!thirdPartyInsurance.driver_name  && verife" class="msg_error text-center mt-0">
+                *    إسم السائق إجباري
+          </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+            <label>عنوانه </label>
+            <input type="text" [ngClass]="!thirdPartyInsurance.driver_address && verife?'form-control error-border':'form-control' " [(ngModel)]="thirdPartyInsurance.driver_address" required>
+
+                </div>
+                <div *ngIf="!thirdPartyInsurance.driver_address  && verife" class="msg_error text-center mt-0">
+                    *    عنوانه إجباري
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+            <label>رقم هاتفه            </label>
+            <input type="text" [ngClass]="!thirdPartyInsurance.driver_phone && verife?'form-control error-border':'form-control' " [(ngModel)]="thirdPartyInsurance.driver_phone" >
+            </div>
+            <div *ngIf="!thirdPartyInsurance.driver_phone  && verife" class="msg_error text-center mt-0">
+                * رقم هاتفه إجباري
+          </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="dis">
+                <p>نوع التأمين</p>
+                <select class="form-select"  [(ngModel)]="thirdPartyInsurance.insurance_type" (change)="changeroption1()">
+                    <option selected value="إجباري لمدة سنة" style="font-weight: bold">إجباري لمدة سنة </option>
+                    <option value="سنتان">سنتان</option>
+                    <option value="ثلاثة سنوات">ثلاثة سنوات  </option>
+                    <option value="جمارك">جمارك  </option>
+                    <option value="فترة قصيرة">فترة قصيرة  </option>
+                    <option value="تغير الملكية ">تغير الملكية </option>
+                    <option value="بدل فاقد ">بدل فاقد  </option>
+                  </select>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="col-8">
+            <div class="dis">
+            <p>   التغطية من  </p>
+                <input type="date" class="form-control"   [(ngModel)]="startDate" (change)="changeroption1()"/>
+
+                إلى
+                <input type="date" class="form-control" [(ngModel)]="endDate" disabled/>
+                </div>
+        </div>
+    </div>
+
+    &lt;!&ndash;ligne 3&ndash;&gt;
+
+    <div class="row">
+        <div class="col-4">
+            <div class="dis">
+                <p>  نوع الترخيص  </p>
+            <select class="form-select" [(ngModel)]="thirdPartyInsurance.license_type" >
+                <option selected value="خاصة">خاصة</option>
+                <option value="مقطورة خاصة">مقطورة خاصة</option>
+                <option value="ركوبة عامة داخل المدينة">ركوبة عامة داخل المدينة</option>
+                <option value="ركوبة عامة خارج المدينة">ركوبة عامة خارج المدينة</option>
+                <option value="مركبة مقطورة بالحافلة ">مركبة مقطورة بالحافلة </option>
+                <option value="سيرة نقل و رأس جر">سيرة نقل و رأس جر</option>
+                <option value="سيارة جرارة و الألات ">سيارة جرارة و الألات  </option>
+                <option value="مركبة مقطورة ">مركبة مقطورة </option>
+                <option value="دراجة نارية ">دراجة نارية </option>
+                <option value="دراجة نارية بمنحقات"> دراجة نارية بمنحقات</option>
+                <option value="سيارة نقل الموتى ">سيارة نقل الموتى </option>
+                <option value="السيرات التيجارية">السيرات التيجارية </option>
+                <option value="سيارة إسعاف">سيارة إسعاف </option>
+                <option value="سيارة مدرسة تعليم">سيارة مدرسة تعليم</option>
+              </select>
+              </div>
+
+        </div>
+        <div class="col-4">
+            <div class="dis">
+                <p>        مواصفاته        </p>
+            <select [(ngModel)]="thirdPartyInsurance.insurance_specifications" [ngClass]="thirdPartyInsurance.insurance_specifications=='اختر مواصفاته' && verife?'form-select error-border':'form-select' " (change)="taxecalcule()">
+                <option selected value="اختر مواصفاته"> اختر مواصفاته  </option>
+                <option  value="من 0 إلى 16 حصان"> من 0 إلى 16 حصان  </option>
+                <option value="من 17 إلى 30 حصان">من 17 إلى 30 حصان   </option>
+                <option value="أكثر من 30 حصان">أكثر من 30 حصان</option>
+              </select>
+              </div>
+              <div *ngIf="thirdPartyInsurance.insurance_specifications=='اختر مواصفاته'  && verife" class="msg_error text-center mt-0">
+                *  مواصفاته إجباري
+          </div>
+        </div>
+        <div class="col-6 pt-4">
+            <div class="dis">
+            <p>حدود المسؤلية            </p>
+            <textarea [ngClass]="!thirdPartyInsurance.responsability && verife?'form-control error-border':'form-control' " [(ngModel)]="thirdPartyInsurance.responsability" rows="3"></textarea>
+
+        </div>
+        <div *ngIf="!thirdPartyInsurance.responsability  && verife" class="msg_error text-center mt-0">
+            * حدود المسؤلية إجباري
+      </div>
+        </div>
+        </div>
+        </div>
+
+    </div>
+    &lt;!&ndash; car detaile &ndash;&gt;
+    <div class="card 1 mt-5 ">
+        <div class="card-body">
+          <h4 class="card-title text-center ">معلومات عن السيارة    </h4>
+    <div class="row">
+        <div class="col-4">
+            <div class="dis">
+                <p>   نوع السيارة   </p>
+                <select [ngClass]="thirdPartyInsurance.type_car=='اختر ماركة السيارة' && verife?'form-select error-border':'form-select' "  [(ngModel)]="thirdPartyInsurance.type_car">
+                        <option selected>اختر ماركة السيارة</option>
+                        <option value="ألفا روميو">ألفا روميو</option>
+                        <option value="أودي">أودي</option>
+                        <option value="ايسوزو">ايسوزو</option>
+                        <option value="ام جى">ام جى</option>
+                        <option value="أوبل">أوبل</option>
+                        <option value="بروتون">بروتون</option>
+                        <option value="بى ام دبليو">بى ام دبليو</option>
+                        <option value="بريليانس">بريليانس</option>
+                        <option value="بى واى دى">بى واى دى</option>
+                        <option value="بيجو">بيجو</option>
+                        <option value="بورش">بورش</option>
+                        <option value="تويوتا">تويوتا</option>
+                        <option value="دايو">دايو</option>
+                        <option value="دايهاتسو">دايهاتسو</option>
+                        <option value="دودج">دودج</option>
+                        <option value="جيلى">جيلى</option>
+                        <option value="جاكوار">جاكوار</option>
+                        <option value="جيب">جيب</option>
+                        <option value="رينو">رينو</option>
+                        <option value="سايبا">سايبا</option>
+                        <option value="سكودا">سكودا</option>
+                        <option value="اسبرانزا">اسبرانزا</option>
+                        <option value="سانج يونغ">سانج يونغ</option>
+                        <option value="سوبارو">سوبارو</option>
+                        <option value="شيرى">شيرى</option>
+                        <option value="شيفروليه">شيفروليه</option>
+                        <option value="سيتروين">سيتروين</option>
+                        <option value="فورد">فورد</option>
+                        <option value="سيات">سيات</option>
+                        <option value="سوزوكى">سوزوكى</option>
+                        <option value="كرايسلر">كرايسلر</option>
+                        <option value="فيات">فيات</option>
+                        <option value="كيا">كيا</option>
+                        <option value="لادا">لادا</option>
+                        <option value="فولكسفاجن">فولكسفاجن</option>
+                        <option value="فولفو">فولفو</option>
+                        <option value="لاند روفر">لاند روفر</option>
+                        <option value="مازدا">مازدا</option>
+                        <option value="مرسيدس بنز">مرسيدس بنز</option>
+                        <option value="ميني كوبر">ميني كوبر</option>
+                        <option value="ميتسوبيشى">ميتسوبيشى</option>
+                        <option value="نيسان">نيسان</option>
+                        <option value="هوندا">هوندا</option>
+                        <option value="هامر">هامر</option>
+                        <option value="هيونداي">هيونداي</option>
+                      </select>
+
+            </div>
+            <div *ngIf="thirdPartyInsurance.type_car=='اختر ماركة السيارة'  && verife" class="msg_error text-center mt-0">
+                * نوع السيارة إجباري
+          </div>
+
+        </div>
+        <div class="col-4">
+            <div class="dis">
+                <p>        رقم اللوحة            </p>
+            <input type="text" [ngClass]="!thirdPartyInsurance.numero_serie && verife?'form-control error-border':'form-control' " [(ngModel)]="thirdPartyInsurance.numero_serie"   />
+        </div>
+        <div *ngIf="!thirdPartyInsurance.numero_serie  && verife" class="msg_error text-center mt-0">
+            * رقم اللوحة إجباري
+      </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+               <p>        رقم الهيكل        </p>
+            <input type="text" [ngClass]="!thirdPartyInsurance.numero_structure && verife?'form-control error-border':'form-control' "  [(ngModel)]="thirdPartyInsurance.numero_structure" />
+        </div>
+        <div *ngIf="!thirdPartyInsurance.numero_structure  && verife" class="msg_error text-center mt-0">
+            *  إجباري رقم الهيكل
+      </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+                <p>        رقم المحرك            </p>
+            <input type="text" [ngClass]="!thirdPartyInsurance.numero_moteur && verife?'form-control error-border':'form-control' "  [(ngModel)]="thirdPartyInsurance.numero_moteur" />
+        </div>
+        <div *ngIf="!thirdPartyInsurance.numero_moteur  && verife" class="msg_error text-center mt-0">
+            *  إجباري  رقم المحرك
+      </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+                <p>الحمولة</p>
+
+        <input type="number" [ngClass]="!thirdPartyInsurance.Charge && verife?'form-control error-border':'form-control' "   [(ngModel)]="thirdPartyInsurance.Charge"/>
+        </div>
+        <div *ngIf="!thirdPartyInsurance.Charge  && verife" class="msg_error text-center mt-0">
+            *  إجباري الحمولة
+      </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+                <p>        عدد الركاب            </p>
+            <input type="number" [ngClass]="!thirdPartyInsurance.nb_passager && verife?'form-control error-border':'form-control' "  [(ngModel)]="thirdPartyInsurance.nb_passager" />
+        </div>
+        <div *ngIf="!thirdPartyInsurance.nb_passager  && verife" class="msg_error text-center mt-0">
+            *  إجباري  عدد الركاب
+      </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+                <p>        سنة الصنع            </p>
+            <select [ngClass]="!annee_de_fabrication && verife?'form-select error-border':'form-select' " id="year" [(ngModel)]="annee_de_fabrication">
+                <option value="">اختر سنة الصنع</option>
+      <option *ngFor="let year of years" [value]="year">{{year}}</option>
+              </select>
+            </div>
+            <div *ngIf="!annee_de_fabrication  && verife" class="msg_error text-center mt-0">
+                *  إجباري سنة الصنع
+          </div>
+        </div>
+
+        <div class="col-4">
+            <div class="dis">
+                <p>اللون</p>
+
+            <select [ngClass]="thirdPartyInsurance.couleur=='اختر لون السيارة' && verife?'form-select error-border':'form-select' "  [(ngModel)]="thirdPartyInsurance.couleur">
+                <option value="اختر لون السيارة" selected>اختر لون السيارة</option>
+                <option value="أبيض">أبيض</option>
+                <option value="أسود">أسود</option>
+                <option value="أحمر">أحمر</option>
+                <option value="أزرق">أزرق</option>
+                <option value="أخضر">أخضر</option>
+                <option value="أصفر">أصفر</option>
+                <option value="برتقالي">برتقالي</option>
+                <option value="أرجواني">أرجواني</option>
+                <option value="بني">بني</option>
+                <option value="فضي">فضي</option>
+                <option value="ذهبي">ذهبي</option>
+                <option value="رمادي">رمادي</option>
+                <option value="بورجوندي">بورجوندي</option>
+              </select>
+              </div>
+              <div *ngIf="thirdPartyInsurance.couleur=='اختر لون السيارة'  && verife" class="msg_error text-center mt-0">
+                *  إجباري اللون
+          </div>
+        </div>
+
+        <div class="col-4">
+            <div class="dis">
+                <p>        بلد الصنع            </p>
+            <select [ngClass]="thirdPartyInsurance.Pays_de_fabrication=='اختر بلد الصنع' && verife?'form-select error-border':'form-select' "  [(ngModel)]="thirdPartyInsurance.Pays_de_fabrication">
+                <option value="اختر بلد الصنع">اختر بلد الصنع</option>
+                <option value="ألمانيا">ألمانيا</option>
+                <option value="اليابان">اليابان</option>
+                <option value="كوريا الجنوبية">كوريا الجنوبية</option>
+                <option value="الصين">الصين</option>
+                <option value="فرنسا">فرنسا</option>
+                <option value="إيطاليا">إيطاليا</option>
+                <option value="الولايات المتحدة">الولايات المتحدة</option>
+                <option value="المملكة المتحدة">المملكة المتحدة</option>
+                <option value="كندا">كندا</option>
+                <option value="البرازيل">البرازيل</option>
+                <option value="الهند">الهند</option>
+                <option value="تايلاند">تايلاند</option>
+                <option value="تركيا">تركيا</option>
+                <option value="روسيا">روسيا</option>
+              </select>
+              </div>
+              <div *ngIf="thirdPartyInsurance.Pays_de_fabrication=='اختر بلد الصنع'  && verife" class="msg_error text-center mt-0">
+                *  إجباري   بلد الصنع
+          </div>
+        </div>
+        <div class="col-4">
+            <div class="dis">
+                <p>        جهة الترخيص            </p>
+            <select [ngClass]="!thirdPartyInsurance.Orga_de_delivr && verife?'form-select error-border':'form-select' " [(ngModel)]="thirdPartyInsurance.Orga_de_delivr">
+                <option value="">اختر ولاية ليبيا</option>
+                <option *ngFor="let state of libyanStates" [value]="state">{{state}}</option>
+              </select>
+            </div>
+            <div *ngIf="!thirdPartyInsurance.Orga_de_delivr  && verife" class="msg_error text-center mt-0">
+                *  إجباري جهة الترخيص
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+    &lt;!&ndash; card &ndash;&gt;
+    <div class="card shadow1 mt-5 ">
+        <div class="card-body">
+          <h4 class="card-title text-center ">حساب الضرائب    </h4>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="dis">
+                    <p>مبلغ التأمين </p>
+                    <input type="number" class="form-control"  style="width: 40%;" [(ngModel)]="thirdPartyInsurance.insurance_value" [value]="thirdPartyInsurance.insurance_value"/>
+                </div>
+                </div>
+                <div class="col-4">
+                    <div class="dis">
+                        <p>التحمل                        </p>
+
+                    <input type="number" class="form-control" style="width: 40%;" [value]="thirdPartyInsurance.endurance" [(ngModel)]="thirdPartyInsurance.endurance"/>
+                </div>
+                </div>
+                <div class="col-4">
+                    <div class="dis">
+                    <p>القسط الصافي</p>
+                    <input type="number" class="form-control"  style="width: 40%;" [value]="thirdPartyInsurance.initial" [(ngModel)]="thirdPartyInsurance.initial"/>
+                </div>
+                </div>
+                <div class="col-4">
+                    <div class="dis">
+                        <p>الضريبة</p>
+
+                    <input type="number" class="form-control" style="width: 40%;" [value]="thirdPartyInsurance.taxe1" [(ngModel)]="thirdPartyInsurance.taxe1"/>
+                </div>
+                </div>
+                <div class="col-4">
+                    <div class="dis">
+                   <p>الدمغة</p>
+                    <input type="number" class="form-control" style="width: 40%;"  [value]="thirdPartyInsurance.taxe2" [(ngModel)]="thirdPartyInsurance.taxe2"/>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="dis">
+                    <p>الإشراف و الرقابة</p>
+                    <input type="number" class="form-control" style="width: 40%;" [value]="thirdPartyInsurance.taxe3" [(ngModel)]="thirdPartyInsurance.taxe3"/>
+                </div>
+                </div>
+                <div class="col-4">
+                    <div class="dis">
+                    <p>م الإصدار</p>
+                    <input type="number" class="form-control" style="width: 40%;" [value]="thirdPartyInsurance.taxe4" [(ngModel)]="thirdPartyInsurance.taxe4"/>
+                </div>
+                </div>
+                <div class="col-4">
+                    <div class="dis">
+                    <p>الإجمالي</p>
+                    <input type="number" class="form-control" style="width: 40%;" [value]="thirdPartyInsurance.total" [(ngModel)]="thirdPartyInsurance.total"/>
+                </div>
+                </div>
+            </div>
+
+
+
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="dis">
+        <button type="button" class="button b1" (click)="OnRecuper()" >إضافة  <i class="fa-solid fa-plus" style="color: #ffffff;"></i>  </button>
+        <button type="button" class="button b2">طباعة   <i class="fa-solid fa-download" style="color: #ffffff;"></i> </button>
+        <button type="button" class="button b3" routerLink="/dashboard">إلغاء  <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>  </button>
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+-->

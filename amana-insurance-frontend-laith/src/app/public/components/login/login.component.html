@@ -1,0 +1,32 @@
+<div class="my-container">
+  <div class="login-content">
+    <img [src]="imgSrc" alt="login">
+    <h2 class="title">مرحبًا بك</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>إسم المستخدم</mat-label>
+        <input type="text" matInput formControlName="username">
+        <mat-icon matIconPrefix>person</mat-icon>
+        @if (this.form.get("username")?.getError('required')) {
+          <mat-error>إسم المستخدم<strong> اجباري</strong></mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>كلمة المرور</mat-label>
+        <input [type]="hide ? 'password' : 'text'" matInput formControlName="password">
+        <mat-icon matIconPrefix>password</mat-icon>
+        <button mat-icon-button matIconSuffix (click)="showPassword()" type="button">
+          <mat-icon >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        @if (this.form.get("password")?.getError('required')) {
+          <mat-error>كلمة المرور<strong> اجبارية</strong></mat-error>
+        }
+        @if (this.form.get("password")?.getError('wrong_login')) {
+          <mat-error>إسم المستخدم أو كلمة المرور <strong> غير صحيحة</strong></mat-error>
+        }
+      </mat-form-field>
+      <mat-custom-button [isLoading]="isLoading" color="primary" label="دخول" classlist="login-button login" type="submit"></mat-custom-button>
+    </form>
+  </div>
+</div>

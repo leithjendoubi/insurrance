@@ -1,0 +1,88 @@
+@use "sass:math";
+@import '../../../styles/_variables.scss';
+
+h2 {
+  font-family: "Cairo", sans-serif;
+  color: map-get($colors, "primary");
+  font-weight: 800;
+  font-size: 25px;
+  margin-bottom: 50px;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .mat-mdc-card {
+    padding: 30px 8%;
+    box-shadow: 0 14.625px 80.4375px -21.9375px rgba(43, 37, 37, 0.12);
+    .mat-mdc-card-header {
+      justify-content: center;
+
+      .mat-mdc-card-title {
+        font-size: 15px;
+      }
+    }
+
+    .mat-mdc-card-content {
+      margin: 50px 0 0;
+      display: grid;
+      grid-gap: 30px 5%;
+      .result{
+        .no-data-container{
+          height: 150px;
+          width: 100%;
+          display: grid;
+          place-items: center;
+          h1{
+            width: fit-content;
+            margin:0;
+            font-size: 20px;
+            font-weight: bold;
+            color: map-get($colors,"primary");
+            font-family: Changa,sans-serif;
+          }
+        }
+
+        ::ng-deep.table-container{
+          max-height: 350px;
+          overflow: auto;
+          table{
+            .mat-mdc-footer-cell{
+              font-weight: bold;
+              font-size: 0.6rem;
+            }
+          }
+        }
+
+
+      }
+      #choose-file{
+        height:30px;
+        width: 30px;
+        position: relative;
+        .mat-icon{
+          position: absolute;
+          top: 20%;
+          right: 10%;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100% / 2, max(64px, 100% / 5)), 1fr));
+    grid-gap: 30px 5%;
+    width: 100%;
+    ::ng-deep .debts-payment-button {
+      background-color: map-get($colors, "chips","text","role","director");
+    }
+  }
+}
+

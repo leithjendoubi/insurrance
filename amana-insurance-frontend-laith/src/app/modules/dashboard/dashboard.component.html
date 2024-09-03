@@ -1,0 +1,67 @@
+<!--<router-outlet></router-outlet>-->
+<app-side-navbar (onToggleSideNav)="onToggleSideNav($event)"></app-side-navbar>
+<div class="container-fluid p-0">
+  <app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-body>
+</div>
+<!--<div class="bg py-5">
+
+
+  <div class="container ">
+    <div class="card shadow1 pt-3 ">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6">
+            <h2> يا سيدي ! مرحبًا بك في لوحة التحكم </h2>
+            <p class="mt-3 mb-2">إذا كنت تريد الإطلاع على التقارير فأختر مايناسبك </p>
+            <div class="choices">
+              <button type="button" class="button b1" [routerLink]="'/RapportOblig'">إجباري <i
+                class="fa-solid fa-file-invoice" style="color: #ffffff;"></i></button>
+              <button type="button" class="button b2" [routerLink]="'/RapportTroisme'">طرف ثالث <i
+                class="fa-solid fa-file-invoice" style="color: #ffffff;"></i></button>
+              <button type="button" class="button b3" [routerLink]="'/RapportSante'"> تأمين صحي <i
+                class="fa-solid fa-file-invoice" style="color: #ffffff;"></i></button>
+              <button type="button" class="button b4" [routerLink]="'/RapportTravel'">مسافرين<i
+                class="fa-solid fa-file-invoice" style="color: #ffffff;"></i></button>
+              <button type="button" class="button b5" [routerLink]="'/RapportTous'">كل الأنواع <i
+                class="fa-solid fa-file-invoice" style="color: #ffffff;"></i></button>
+              <mat-mat-custom-button color="warn" label="خروج" (click)="logout()" [isLoading]="isLoading"
+                                  classlist="logout-button" icon="logout"></mat-mat-custom-button>
+            </div>
+          </div>
+          <div class="col-6 mt-5">
+            <img src="assets\images\danial.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <app-obligatory-insurances-tab *ngIf="user==Role.User || Role.Director || Role.Admin"></app-obligatory-insurances-tab>
+  <app-payment-tab *ngIf="user === Role.Finance || user === Role.Admin"></app-payment-tab>
+  <div
+    [ngClass]="{'container': true, 'container-tec': user === Role.User || user === Role.Director || user === Role.Admin, 'container-mali': user === Role.Finance}"
+    *ngIf="user === Role.User || user === Role.Finance || user === Role.Director || user === Role.Admin">
+    <div class="row justify-content-center">
+      <div
+        [ngClass]="{'col-6': user === Role.User|| user === Role.Director || user === Role.Admin , 'col-10': user === Role.Finance }">
+        <app-line-chart></app-line-chart>
+      </div>
+
+      <div
+        [ngClass]="{'col-6': user === Role.User || user === Role.Director || user === Role.Admin, 'col-10': user === Role.Finance }">
+        <app-mychart></app-mychart>
+      </div>
+    </div>
+  </div>
+
+
+  <app-travel-insurances-tab *ngIf="user==Role.User || user==Role.Director|| user==Role.Admin"></app-travel-insurances-tab>
+  <app-health-insurances-tab *ngIf="user==Role.User || user==Role.Director || user===Role.Admin"></app-health-insurances-tab>
+  <app-third-party-insurances-tab *ngIf="user==Role.User || user==Role.Director || user===Role.Admin"></app-third-party-insurances-tab>
+  <app-user-tab *ngIf="user==Role.Director || user==Role.Admin"></app-user-tab>
+  <app-bureau-tab *ngIf="user===Role.Admin"></app-bureau-tab>
+</div>-->
+
+
+<!--<mat-mat-custom-button color="warn" label="خروج" (click)="logout()" [isLoading]="isLoading" classlist="logout-button" icon="logout">-->

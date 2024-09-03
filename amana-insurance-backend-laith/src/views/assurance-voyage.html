@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('assets/travel-invoice.svg');
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: center center;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Baloo Bhaijaan 2', sans-serif;
+            font-size: 0.8rem;
+            color: #696969;
+        }
+
+        .head {
+            position: absolute;
+            top: 172px;
+            left: 115px;
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+        }
+
+        #id {
+            margin-left: 50px;
+        }
+
+        #bureau {
+            margin-left: 25px;
+        }
+
+        #today {
+            margin-top: 5px;
+        }
+
+        .person-details {
+            position: absolute;
+            top: 385px;
+            left: 80px;
+            display: grid;
+            gap: 35px 190px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #numero_passport {
+            margin-left: 30px;
+        }
+
+        #address {
+            grid-column: 2/4;
+            margin-left: 40px;
+        }
+
+        #nationalite {
+            margin-left: 110px;
+            grid-column: 2/4;
+        }
+
+        
+        .coverage-details{
+            position: absolute;
+            top: 631px;
+            left: 110px;
+            display: grid;
+            gap: 35px 85px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        #startDate{
+            margin-left: 40px;
+        }
+
+        #zone_couver{
+            margin-left: 50px;
+        }
+        #medical_coverage{
+            margin-left: 115px;
+        }
+        #total {
+            font-weight: bolder;
+            position: absolute;
+            top: 930px;
+            left: 680px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <p id="id"></p>
+        <p id="bureau"></p>
+        <p id="today"></p>
+    </div>
+    <div class="person-details">
+        <p id="name"></p>
+        <p id="birthDate"></p>
+        <p id="sex"></p>
+        <p id="numero_passport"></p>
+        <p id="address"></p>
+        <p id="phone"></p>
+        <p id="nationalite"></p>
+    </div>
+    <div class="coverage-details">
+        <p id="startDate"></p>
+        <p id="endDate"></p>
+        <p id="nb_days"></p>
+        <p id="direction"></p>
+        <p id="zone_couver"></p>
+        <p id="medical_coverage"></p>
+    </div>
+    <!-- <p id="initial"></p>
+<p id="alltaxes"></p> -->
+    <p id="total"></p>
+</body>
+
+
+<script>
+    // Function to parse query parameters from URL
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        console.log(name);
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+        const results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Retrieve query parameters and set data in HTML elements
+    const contents = document.getElementsByTagName('p')
+    for (let i = 0; i < contents.length; i++) {
+        const value = getParameterByName(contents[i].id);
+        contents[i].innerText = value || 'No Value';
+    }
+</script>
+
+</html>
